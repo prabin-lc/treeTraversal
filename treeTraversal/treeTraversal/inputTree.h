@@ -4,17 +4,17 @@
 #include "tree.h"
 class inputTree
 {
-	int count=0;
 	std::string data[50];
-	int length,height;
+	unsigned int length,height;
 public:
 	inputTree();
 	tree* prefix();
-	tree* prefix(int h, int c);
+	tree* prefix(int, int);
 	tree* postfix();
-	tree* postfix(int h, int c);
+	tree* postfix(int, int);
 	tree* infix();
-	tree* infix(int h, int c);
-
+	tree* infix(int h, unsigned int c);
+	void print2DUtil(tree*, int);
+	void print2D(tree*);
 };
 

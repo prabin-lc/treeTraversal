@@ -5,6 +5,11 @@ using namespace std;
 int main()
 {
 	inputTree a;
-	a.prefix();
+	for (int i = 0; i < 50; i++)cout << "-";
+	a.print2D(a.prefix());
+	for (int i = 0; i < 50; i++)cout << "-";
+	a.print2D(a.infix());
+	for (int i = 0; i < 50; i++)cout << "-";
+	a.print2D(a.postfix());
 	return 0;
 }
