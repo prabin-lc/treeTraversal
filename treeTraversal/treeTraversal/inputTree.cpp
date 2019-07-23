@@ -26,7 +26,7 @@ inputTree::inputTree():length(0),height(0)
 			}
 		}
 		if (stat) {
-			for (int i = 0; i < length; i++)
+			for (unsigned int i = 0; i < length; i++)
 				data[i] = d[i];
 			break;
 		}
