@@ -18,19 +18,41 @@
     <ClCompile Include="..\..\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="inputTree.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sfmlex.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="tree.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="inputTree.cpp">
+    <ClCompile Include="resources.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="tree.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="inputTree.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="sfmlex.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="tree.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="resources.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="chalkboard.ttf">
+      <Filter>Resource Files</Filter>
+    </Font>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="door.png">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>
