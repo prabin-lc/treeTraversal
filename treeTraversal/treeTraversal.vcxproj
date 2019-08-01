@@ -132,12 +132,14 @@
     <ClCompile Include="inputTree.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="resources.cpp" />
+    <ClCompile Include="sflogic.cpp" />
     <ClCompile Include="sfmlex.cpp" />
     <ClCompile Include="tree.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="inputTree.h" />
     <ClInclude Include="resources.h" />
+    <ClInclude Include="sflogic.h" />
     <ClInclude Include="sfmlex.h" />
     <ClInclude Include="tree.h" />
   </ItemGroup>
@@ -145,7 +147,8 @@
     <Font Include="chalkboard.ttf" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="door.png" />
+    <Image Include="board.png" />
+    <Image Include="canvas.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

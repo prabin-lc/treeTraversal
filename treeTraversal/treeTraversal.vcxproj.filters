@@ -30,6 +30,9 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="sflogic.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="inputTree.h">
@@ -44,6 +47,9 @@
     <ClInclude Include="resources.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="sflogic.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Font Include="chalkboard.ttf">
@@ -51,7 +57,10 @@
     </Font>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="door.png">
+    <Image Include="board.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="canvas.png">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>

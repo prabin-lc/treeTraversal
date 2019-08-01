@@ -1,2 +1,3 @@
-﻿  main.cpp
-  treeTraversal.vcxproj -> C:\Users\User\source\repos\treeTraversal\Debug\treeTraversal.exe
+﻿  sflogic.cpp
+C:\Users\User\source\repos\treeTraversal\treeTraversal\treeTraversal\sflogic.cpp(50,192): warning C4554:  '|': check operator precedence for possible error; use parentheses to clarify precedence
+  treeTraversal.vcxproj -> C:\Users\User\source\repos\treeTraversal\treeTraversal\Debug\treeTraversal.exe
