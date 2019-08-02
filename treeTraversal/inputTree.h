@@ -5,9 +5,14 @@
 class inputTree
 {
 	std::string data[50];
-	unsigned int length,height;
+	unsigned int length=0,height=0;
 public:
 	inputTree();
+	inputTree(int);
+	void addS();
+	void addC(char);
+	void deleteC();
+	bool validate();
 	tree* prefix();
 	tree* prefix(int, int);
 	tree* postfix();

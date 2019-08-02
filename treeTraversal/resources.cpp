@@ -1,5 +1,5 @@
 #include "resources.h"
-
+inputTree Resources::a;
 sf::Font* Resources::font=new sf::Font[2];
 sf::Texture* Resources::texture = new sf::Texture [2];
 sf::Sprite* Resources::sprite = new sf::Sprite[2];
@@ -39,7 +39,7 @@ void Resources::load()
 	text[3].setFillColor(sf::Color::Black);
 	text[3].setPosition(100.f, 390.f);
 	shape[0].setSize(sf::Vector2f(500.f,600.f));
-	shape[0].setPosition(75.f, 90.f);
+	shape[0].setPosition(100.f, 90.f);
 	shape[0].setFillColor(sf::Color::Transparent);
 
 }
@@ -56,10 +56,12 @@ void Resources::unfocusedT(int n)
 void Resources::focusedS(int n)
 {
 	shape[n].setOutlineThickness(1.f);
+	shape[n].setFillColor(sf::Color(90, 90, 110, 32));
 }
 void Resources::unfocusedS(int n)
 {
 	shape[n].setOutlineThickness(0);
+	shape[n].setFillColor(sf::Color::Transparent);
 }
 Resources::~Resources()
 {

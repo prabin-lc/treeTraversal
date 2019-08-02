@@ -1,8 +1,11 @@
 #include "inputTree.h"
 
-inputTree::inputTree():length(0),height(0)
+inputTree::inputTree()
 {
+}
 
+inputTree::inputTree(int)
+{
 	while (1) {
 		std::string d[50];
 		length = 0;
@@ -32,6 +35,40 @@ inputTree::inputTree():length(0),height(0)
 		}
 		std::cout << "\ninvalid input.\nDid you forget to specify NULL nodes?\n" << std::endl;
 	}
+}
+void inputTree::addS()
+{
+	if (data[length] == "")return;
+	else
+	{
+		data[++length] = "";
+		height = static_cast<unsigned>(log2(length + 1));
+	}
+}
+
+void inputTree::addC(char c)
+{
+	data[length] += c;
+}
+
+void inputTree::deleteC()
+{
+	if (length == 0)return;
+	else if (data[length] == "")
+	{
+		data[length--] = nullptr;
+		height = static_cast<unsigned>(log2(length + 1));
+	}
+	else
+	{
+		data[length][data[length].length()] == NULL;
+	}
+}
+
+bool inputTree::validate()
+{
+	if (fabs(length-pow(2,height)-1<0.0001)) return true;
+	return false;
 }
 tree* inputTree::prefix()
 {

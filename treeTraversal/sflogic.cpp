@@ -96,7 +96,6 @@ void menuEvent(sf::RenderWindow* window)
 void gameEvent(sf::RenderWindow* window)
 {
 	isFocused = 0;
-	std::string tempInput="";
 	while (window->isOpen())
 	{
 		sf::Event event;
@@ -129,10 +128,16 @@ void gameEvent(sf::RenderWindow* window)
 				unsigned int uni = event.text.unicode;
 				if (uni> 31 && uni < 127)
 				{
-					tempInput += static_cast<char>(uni);
+					Resources::a.addC(static_cast<char>(uni));
 				}
-				if (uni == 13);
-
+				else if (uni == 8)
+				{
+					Resources::a.deleteC();
+				}
+				else if (uni == 13)
+				{
+					Resources::a.addS();
+				}
 				std::cout << uni << std::endl;
 			}
 		}
