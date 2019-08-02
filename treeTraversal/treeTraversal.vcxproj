@@ -144,11 +144,13 @@
     <ClInclude Include="tree.h" />
   </ItemGroup>
   <ItemGroup>
-    <Font Include="chalkboard.ttf" />
+    <Image Include="res\board.png" />
+    <Image Include="res\menu.png" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="board.png" />
-    <Image Include="canvas.png" />
+    <Font Include="res\chalkboard.ttf" />
+    <Font Include="res\Keshya.ttf" />
+    <Font Include="res\Montserrat.ttf" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -52,16 +52,22 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Font Include="chalkboard.ttf">
+    <Image Include="res\board.png">
       <Filter>Resource Files</Filter>
-    </Font>
+    </Image>
+    <Image Include="res\menu.png">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="board.png">
+    <Font Include="res\chalkboard.ttf">
       <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="canvas.png">
+    </Font>
+    <Font Include="res\Keshya.ttf">
       <Filter>Resource Files</Filter>
-    </Image>
+    </Font>
+    <Font Include="res\Montserrat.ttf">
+      <Filter>Resource Files</Filter>
+    </Font>
   </ItemGroup>
 </Project>

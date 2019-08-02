@@ -1,3 +1,42 @@
 ﻿  sflogic.cpp
-C:\Users\User\source\repos\treeTraversal\treeTraversal\treeTraversal\sflogic.cpp(50,192): warning C4554:  '|': check operator precedence for possible error; use parentheses to clarify precedence
+C:\Users\User\source\repos\treeTraversal\treeTraversal\treeTraversal\sflogic.cpp(60,144): warning C4244:  'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\User\source\repos\treeTraversal\treeTraversal\treeTraversal\sflogic.cpp(60,144): warning C4244:         with
+C:\Users\User\source\repos\treeTraversal\treeTraversal\treeTraversal\sflogic.cpp(60,144): warning C4244:         [
+C:\Users\User\source\repos\treeTraversal\treeTraversal\treeTraversal\sflogic.cpp(60,144): warning C4244:             T=float
+C:\Users\User\source\repos\treeTraversal\treeTraversal\treeTraversal\sflogic.cpp(60,144): warning C4244:         ]
+C:\Users\User\source\repos\treeTraversal\treeTraversal\treeTraversal\sflogic.cpp(60,124): warning C4244:  'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\User\source\repos\treeTraversal\treeTraversal\treeTraversal\sflogic.cpp(60,124): warning C4244:         with
+C:\Users\User\source\repos\treeTraversal\treeTraversal\treeTraversal\sflogic.cpp(60,124): warning C4244:         [
+C:\Users\User\source\repos\treeTraversal\treeTraversal\treeTraversal\sflogic.cpp(60,124): warning C4244:             T=float
+C:\Users\User\source\repos\treeTraversal\treeTraversal\treeTraversal\sflogic.cpp(60,124): warning C4244:         ]
+C:\Users\User\source\repos\treeTraversal\treeTraversal\treeTraversal\sflogic.cpp(62,146): warning C4244:  'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\User\source\repos\treeTraversal\treeTraversal\treeTraversal\sflogic.cpp(62,146): warning C4244:         with
+C:\Users\User\source\repos\treeTraversal\treeTraversal\treeTraversal\sflogic.cpp(62,146): warning C4244:         [
+C:\Users\User\source\repos\treeTraversal\treeTraversal\treeTraversal\sflogic.cpp(62,146): warning C4244:             T=float
+C:\Users\User\source\repos\treeTraversal\treeTraversal\treeTraversal\sflogic.cpp(62,146): warning C4244:         ]
+C:\Users\User\source\repos\treeTraversal\treeTraversal\treeTraversal\sflogic.cpp(62,125): warning C4244:  'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\User\source\repos\treeTraversal\treeTraversal\treeTraversal\sflogic.cpp(62,125): warning C4244:         with
+C:\Users\User\source\repos\treeTraversal\treeTraversal\treeTraversal\sflogic.cpp(62,125): warning C4244:         [
+C:\Users\User\source\repos\treeTraversal\treeTraversal\treeTraversal\sflogic.cpp(62,125): warning C4244:             T=float
+C:\Users\User\source\repos\treeTraversal\treeTraversal\treeTraversal\sflogic.cpp(62,125): warning C4244:         ]
+C:\Users\User\source\repos\treeTraversal\treeTraversal\treeTraversal\sflogic.cpp(69,144): warning C4244:  'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\User\source\repos\treeTraversal\treeTraversal\treeTraversal\sflogic.cpp(69,144): warning C4244:         with
+C:\Users\User\source\repos\treeTraversal\treeTraversal\treeTraversal\sflogic.cpp(69,144): warning C4244:         [
+C:\Users\User\source\repos\treeTraversal\treeTraversal\treeTraversal\sflogic.cpp(69,144): warning C4244:             T=float
+C:\Users\User\source\repos\treeTraversal\treeTraversal\treeTraversal\sflogic.cpp(69,144): warning C4244:         ]
+C:\Users\User\source\repos\treeTraversal\treeTraversal\treeTraversal\sflogic.cpp(69,125): warning C4244:  'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\User\source\repos\treeTraversal\treeTraversal\treeTraversal\sflogic.cpp(69,125): warning C4244:         with
+C:\Users\User\source\repos\treeTraversal\treeTraversal\treeTraversal\sflogic.cpp(69,125): warning C4244:         [
+C:\Users\User\source\repos\treeTraversal\treeTraversal\treeTraversal\sflogic.cpp(69,125): warning C4244:             T=float
+C:\Users\User\source\repos\treeTraversal\treeTraversal\treeTraversal\sflogic.cpp(69,125): warning C4244:         ]
+C:\Users\User\source\repos\treeTraversal\treeTraversal\treeTraversal\sflogic.cpp(112,124): warning C4244:  'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\User\source\repos\treeTraversal\treeTraversal\treeTraversal\sflogic.cpp(112,124): warning C4244:         with
+C:\Users\User\source\repos\treeTraversal\treeTraversal\treeTraversal\sflogic.cpp(112,124): warning C4244:         [
+C:\Users\User\source\repos\treeTraversal\treeTraversal\treeTraversal\sflogic.cpp(112,124): warning C4244:             T=float
+C:\Users\User\source\repos\treeTraversal\treeTraversal\treeTraversal\sflogic.cpp(112,124): warning C4244:         ]
+C:\Users\User\source\repos\treeTraversal\treeTraversal\treeTraversal\sflogic.cpp(112,103): warning C4244:  'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\User\source\repos\treeTraversal\treeTraversal\treeTraversal\sflogic.cpp(112,103): warning C4244:         with
+C:\Users\User\source\repos\treeTraversal\treeTraversal\treeTraversal\sflogic.cpp(112,103): warning C4244:         [
+C:\Users\User\source\repos\treeTraversal\treeTraversal\treeTraversal\sflogic.cpp(112,103): warning C4244:             T=float
+C:\Users\User\source\repos\treeTraversal\treeTraversal\treeTraversal\sflogic.cpp(112,103): warning C4244:         ]
   treeTraversal.vcxproj -> C:\Users\User\source\repos\treeTraversal\treeTraversal\Debug\treeTraversal.exe

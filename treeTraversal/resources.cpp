@@ -4,8 +4,10 @@ sf::Font* Resources::font=new sf::Font[2];
 sf::Texture* Resources::texture = new sf::Texture [2];
 sf::Sprite* Resources::sprite = new sf::Sprite[2];
 sf::Text* Resources::text = new sf::Text[10];
+sf::RectangleShape* Resources::shape = new sf::RectangleShape[1];
 int Resources::toDrawSprite[10];
 int Resources::toDrawText[20];
+int Resources::toDrawShape[1];
 void Resources::load()
 {
 	font[0].loadFromFile("res/Keshya.ttf");
@@ -22,20 +24,23 @@ void Resources::load()
 	text[0].setFont(font[0]);
 	text[0].setPosition(100.f, 150.f);
 	text[1].setString("1.  Start");
-	text[1].setCharacterSize(40);
+	text[1].setCharacterSize(30);
 	text[1].setFont(font[1]);
 	text[1].setFillColor(sf::Color::Black);
 	text[1].setPosition(100.f, 290.f);
 	text[2].setString("2.  About");
-	text[2].setCharacterSize(40);
+	text[2].setCharacterSize(30);
 	text[2].setFont(font[1]);
 	text[2].setFillColor(sf::Color::Black);
 	text[2].setPosition(100.f, 340.f);
 	text[3].setString("3.  Exit");
-	text[3].setCharacterSize(40);
+	text[3].setCharacterSize(30);
 	text[3].setFont(font[1]);
 	text[3].setFillColor(sf::Color::Black);
 	text[3].setPosition(100.f, 390.f);
+	shape[0].setSize(sf::Vector2f(500.f,600.f));
+	shape[0].setPosition(75.f, 90.f);
+	shape[0].setFillColor(sf::Color::Transparent);
 
 }
 void Resources::focusedT(int n)
@@ -48,11 +53,13 @@ void Resources::unfocusedT(int n)
 	Resources::text[n].setCharacterSize(30);
 	Resources::text[n].setOutlineColor(sf::Color::White);
 }
-inline void Resources::focusedS(int)
+void Resources::focusedS(int n)
 {
+	shape[n].setOutlineThickness(1.f);
 }
-inline void Resources::unfocusedS(int)
+void Resources::unfocusedS(int n)
 {
+	shape[n].setOutlineThickness(0);
 }
 Resources::~Resources()
 {

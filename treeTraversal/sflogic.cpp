@@ -1,5 +1,6 @@
 #include"sflogic.h"
 #include<iostream>
+unsigned isFocused=0;
 void sflogic()
 {
 	sf::RenderWindow window(sf::VideoMode(1366, 768), "Tree Traversal");
@@ -30,14 +31,23 @@ void setModeStart(unsigned int m)
 			Resources::toDrawSprite[i] = -1;
 		for (int i = 0; i < 20; i++)
 			Resources::toDrawText[i] = -1;
+		Resources::toDrawShape[0] = 0;
 	}
+}
+sf::Vector2f relPoint(sf::RenderWindow* window, sf::Vector2f a)
+{
+	a.x = a.x * 1366 / window->getSize().x;
+	a.y = a.y * 768 / window->getSize().y;
+	return a;
 }
 void menuEvent(sf::RenderWindow* window)
 {
+	isFocused = 0;
 	while (window->isOpen())
 	{
 
 		sf::Event event;
+
 		while (window->pollEvent(event))
 		{
 
@@ -47,21 +57,32 @@ void menuEvent(sf::RenderWindow* window)
 			}
 			if (event.type == sf::Event::MouseButtonPressed)
 			{
-				if (Resources::text[Resources::toDrawText[1]].getGlobalBounds().contains(static_cast<float>(event.mouseButton.x), static_cast<float> (event.mouseButton.y)) | event.mouseButton.button == 0)
+				if (Resources::text[Resources::toDrawText[1]].getGlobalBounds().contains(relPoint(window,sf::Vector2f(event.mouseButton.x,event.mouseButton.y))) && event.mouseButton.button == 0)
 					return;
+				if (Resources::text[Resources::toDrawText[3]].getGlobalBounds().contains(relPoint(window, sf::Vector2f(event.mouseButton.x, event.mouseButton.y))) && event.mouseButton.button == 0)
+					window->close();
 			}
 			if (event.type == sf::Event::MouseMoved)
 			{
-				for (int i = 1; Resources::toDrawText[i] != -1; i++)
-				{
-					if (Resources::text[Resources::toDrawText[i]].getGlobalBounds().contains(static_cast<float>( event.mouseMove.x),static_cast<float> (event.mouseMove.y)))
+					for (int i = 1; Resources::toDrawText[i] != -1; i++)
 					{
-						Resources::focusedT(Resources::toDrawText[i]);
+						if (Resources::text[Resources::toDrawText[i]].getGlobalBounds().contains(relPoint(window, sf::Vector2f(event.mouseMove.x, event.mouseMove.y))))
+						{
+							if (isFocused != i)
+							{
+								Resources::focusedT(Resources::toDrawText[i]);
+								isFocused = i;
+							}
+						}
+						else
+						{
+							if (isFocused == i)
+							{
+								Resources::unfocusedT(Resources::toDrawText[i]);
+								isFocused = 0;
+							}
+						}
 					}
-					else
-						Resources::unfocusedT(Resources::toDrawText[i]);
-				}
-
 			}
 		}
 		window->clear();
@@ -74,6 +95,8 @@ void menuEvent(sf::RenderWindow* window)
 }
 void gameEvent(sf::RenderWindow* window)
 {
+	isFocused = 0;
+	std::string tempInput="";
 	while (window->isOpen())
 	{
 		sf::Event event;
@@ -86,6 +109,31 @@ void gameEvent(sf::RenderWindow* window)
 			if (event.type == sf::Event::MouseButtonPressed)
 			{
 				std::cout << event.mouseButton.button << " " << event.mouseButton.x << " " << event.mouseButton.x << std::endl;
+				if (Resources::shape[0].getGlobalBounds().contains(relPoint(window, sf::Vector2f(event.mouseButton.x, event.mouseButton.y))))
+				{ 
+					if (isFocused != 1)
+					{
+						Resources::focusedS(0);
+						isFocused = 1;
+					}
+				}
+				else
+					if (isFocused == 1)
+					{
+						Resources::unfocusedS(0);
+						isFocused = 0;
+					}
+			}
+			if (event.type == sf::Event::TextEntered)
+			{
+				unsigned int uni = event.text.unicode;
+				if (uni> 31 && uni < 127)
+				{
+					tempInput += static_cast<char>(uni);
+				}
+				if (uni == 13);
+
+				std::cout << uni << std::endl;
 			}
 		}
 		window->clear();
@@ -93,6 +141,7 @@ void gameEvent(sf::RenderWindow* window)
 			window->draw(Resources::sprite[Resources::toDrawSprite[j]]);
 		for (int j = 0; Resources::toDrawText[j] != -1; j++)
 			window->draw(Resources::text[Resources::toDrawText[j]]);
+		window->draw(Resources::shape[Resources::toDrawShape[0]]);
 		window->display();
 	}
 }
