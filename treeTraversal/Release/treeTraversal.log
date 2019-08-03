@@ -1,0 +1,11 @@
+﻿  inputTree.cpp
+  main.cpp
+  resources.cpp
+  sflogic.cpp
+  tree.cpp
+C:\Users\User\source\repos\treeTraversal\treeTraversal\treeTraversal\inputTree.cpp(41,20): warning C4018:  '<': signed/unsigned mismatch
+  Generating code
+  Previous IPDB not found, fall back to full compilation.
+  All 153 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  treeTraversal.vcxproj -> C:\Users\User\source\repos\treeTraversal\treeTraversal\Release\treeTraversal.exe

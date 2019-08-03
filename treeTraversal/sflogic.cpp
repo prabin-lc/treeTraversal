@@ -125,7 +125,6 @@ bool gameEvent(sf::RenderWindow* window)
 			{
 				if (event.type == sf::Event::MouseButtonPressed)
 				{
-					std::cout << event.mouseButton.button << " " << event.mouseButton.x << " " << event.mouseButton.y << std::endl;
 					if (Resources::shape[0].getGlobalBounds().contains(relPoint(window, sf::Vector2f(static_cast<float>(event.mouseButton.x), static_cast<float>(event.mouseButton.y)))))
 					{
 						if (isFocused != 1)
@@ -147,7 +146,7 @@ bool gameEvent(sf::RenderWindow* window)
 					{
 						if (Resources::a.validate())
 						{
-							Resources::outputT = Resources::a.prefix();
+							Resources::outputT = Resources::a.preorder();
 							isOutput = true;
 						}
 						else
@@ -159,7 +158,7 @@ bool gameEvent(sf::RenderWindow* window)
 					{
 						if (Resources::a.validate())
 						{
-							Resources::outputT = Resources::a.infix();
+							Resources::outputT = Resources::a.inorder();
 							isOutput = true;
 						}
 						else
@@ -171,7 +170,7 @@ bool gameEvent(sf::RenderWindow* window)
 					{
 						if (Resources::a.validate())
 						{
-							Resources::outputT = Resources::a.postfix();
+							Resources::outputT = Resources::a.postorder();
 							isOutput = true;
 						}
 						else
@@ -189,7 +188,6 @@ bool gameEvent(sf::RenderWindow* window)
 					if (event.type == sf::Event::TextEntered)
 					{
 						unsigned int uni = event.text.unicode;
-						std::cout << uni << std::endl;
 						if (uni > 31 && uni < 127)
 						{
 							Resources::a.addC(static_cast<char>(uni));
@@ -274,11 +272,11 @@ void treeDisplay(sf::RenderWindow* window, tree* t,int x,int y,int h)
 {
 	if (h == 0)return;
 	y++;
-	treeDisplay(window, t->right, x + pow(2, h - 2), y, h - 1);
+	treeDisplay(window, t->right, x + static_cast<int>(pow(2, h - 2)), y, h - 1);
 	sf::Text data;
 	data.setString(t->data);
 	data.setFont(Resources::font[2]);
 	data.setPosition(670.f + x * 40, 170.f + 110 * (y-1));
 	window->draw(data);
-	treeDisplay(window, t->left, x - pow(2, h - 2), y, h - 1);
+	treeDisplay(window, t->left, x - static_cast<int>(pow(2, h - 2)), y, h - 1);
 }

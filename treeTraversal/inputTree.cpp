@@ -76,14 +76,14 @@ void inputTree::deleteC()
 bool inputTree::validate()
 {
 	if (length == 0)return false;
-	if (fabs(length-pow(2,height)+1)<0.0001) return true;
+	if (fabs(getLength()-pow(2,height)+1)<0.0001) return true;
 	return false;
 }
-tree* inputTree::prefix()
+tree* inputTree::preorder()
 {
-	return prefix(height,0);
+	return preorder(height,0);
 }
-tree* inputTree::prefix(int h,int c)
+tree* inputTree::preorder(int h,int c)
 {
 	tree* newtree = new tree;
 	newtree->data = data[c];
@@ -92,17 +92,17 @@ tree* inputTree::prefix(int h,int c)
 		newtree->right = nullptr;
 		return newtree;
 	}
-	newtree->left = prefix(h - 1, c + 1);
-	newtree->right = prefix(h - 1, c + static_cast<int>(pow(2, h - 1)));
+	newtree->left = preorder(h - 1, c + 1);
+	newtree->right = preorder(h - 1, c + static_cast<int>(pow(2, h - 1)));
 	return newtree;
 }
 
-tree* inputTree::postfix()
+tree* inputTree::postorder()
 {
-	return postfix(height,static_cast<int>(pow(2, height))- 2);
+	return postorder(height,static_cast<int>(pow(2, height))- 2);
 }
 
-tree* inputTree::postfix(int h, int c)
+tree* inputTree::postorder(int h, int c)
 {
 	tree* newtree = new tree;
 	newtree->data = data[c];
@@ -112,17 +112,17 @@ tree* inputTree::postfix(int h, int c)
 		newtree->right = nullptr;
 		return newtree;
 	}
-	newtree->left = postfix(h-1,c-static_cast<int>(pow(2,h-1)));
-	newtree->right = postfix(h-1,c-1);
+	newtree->left = postorder(h-1,c-static_cast<int>(pow(2,h-1)));
+	newtree->right = postorder(h-1,c-1);
 	return newtree;
 }
 
-tree* inputTree::infix()
+tree* inputTree::inorder()
 {
-	return infix(height,static_cast<unsigned int>(pow(2,height-1)-1));
+	return inorder(height,static_cast<unsigned int>(pow(2,height-1)-1));
 }
 
-tree* inputTree::infix(int h,unsigned int c)
+tree* inputTree::inorder(int h,unsigned int c)
 {
 	tree* newtree = new tree;
 	newtree->data = data[c];
@@ -131,13 +131,18 @@ tree* inputTree::infix(int h,unsigned int c)
 		newtree->right = nullptr;
 		return newtree;
 	}
-	newtree->left = infix(h - 1, c - static_cast<int>(pow(2, h - 2)));
-	newtree->right = infix(h - 1, c + static_cast<int>(pow(2, h - 2)));
+	newtree->left = inorder(h - 1, c - static_cast<int>(pow(2, h - 2)));
+	newtree->right = inorder(h - 1, c + static_cast<int>(pow(2, h - 2)));
 	return newtree;
 }
 
 unsigned inputTree::getLength()
 {
+	if (length == 0)return 0;
+	if (data[length - 1] == "")
+	{
+		return length - 1;
+	}
 	return length;
 }
 unsigned inputTree::getHeight()

@@ -1,7 +1,6 @@
 #pragma once
 #include<SFML/Graphics.hpp>
 #include "inputTree.h"
-#include "tree.h"
 
 class Resources 
 {

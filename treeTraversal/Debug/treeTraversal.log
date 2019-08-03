@@ -1,4 +1,7 @@
-﻿  sflogic.cpp
-C:\Users\User\source\repos\treeTraversal\treeTraversal\treeTraversal\sflogic.cpp(277,34): warning C4244:  'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\User\source\repos\treeTraversal\treeTraversal\treeTraversal\sflogic.cpp(283,33): warning C4244:  'argument': conversion from 'double' to 'int', possible loss of data
+﻿  inputTree.cpp
+  main.cpp
+  resources.cpp
+  sflogic.cpp
+  Generating Code...
+C:\Users\User\source\repos\treeTraversal\treeTraversal\treeTraversal\inputTree.cpp(41,20): warning C4018:  '<': signed/unsigned mismatch
   treeTraversal.vcxproj -> C:\Users\User\source\repos\treeTraversal\treeTraversal\Debug\treeTraversal.exe

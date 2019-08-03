@@ -14,12 +14,12 @@ public:
 	void addC(char);
 	void deleteC();
 	bool validate();
-	tree* prefix();
-	tree* prefix(int, int);
-	tree* postfix();
-	tree* postfix(int, int);
-	tree* infix();
-	tree* infix(int h, unsigned int c);
+	tree* preorder();
+	tree* preorder(int, int);
+	tree* postorder();
+	tree* postorder(int, int);
+	tree* inorder();
+	tree* inorder(int h, unsigned int c);
 	unsigned getLength();
 	unsigned getHeight();
 	std::string* getData(int n);

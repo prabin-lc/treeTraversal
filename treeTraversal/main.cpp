@@ -1,6 +1,4 @@
 #include<iostream>
-#include "inputTree.h"
-#include "tree.h"
 #include "resources.h"
 #include "sflogic.h"
 

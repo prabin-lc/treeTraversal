@@ -20,7 +20,7 @@ void Resources::load()
 	texture[1].loadFromFile("res/board.png");
 	sprite[0].setTexture(texture[0]);
 	sprite[1].setTexture(texture[1]);
-	text[0].setString("Tree Constructor");
+	text[0].setString("Tree Generator");
 	text[0].setStyle(sf::Text::Bold|sf::Text::Underlined);
 	text[0].setFillColor(sf::Color(86, 90, 255));
 	text[0].setOutlineThickness(1.f);
@@ -45,17 +45,17 @@ void Resources::load()
 	shape[0].setSize(sf::Vector2f(1160.f,500.f));
 	shape[0].setPosition(110.f, 125.f);
 	shape[0].setFillColor(sf::Color::Transparent);
-	text[4].setString("1. PREFIX");
+	text[4].setString("1. PREORDER");
 	text[4].setCharacterSize(30);
 	text[4].setFont(font[2]);
 	text[4].setPosition(100.f, 650.f);
 	text[4].setStyle(sf::Text::Bold | sf::Text::Underlined);
-	text[5].setString("2. INFIX");
+	text[5].setString("2. INORDER");
 	text[5].setCharacterSize(30);
 	text[5].setFont(font[2]);
 	text[5].setPosition(500.f, 650.f);
 	text[5].setStyle(sf::Text::Bold | sf::Text::Underlined);
-	text[6].setString("3. POSTFIX");
+	text[6].setString("3. POSTORDER");
 	text[6].setCharacterSize(30);
 	text[6].setFont(font[2]);
 	text[6].setPosition(900.f, 650.f);
@@ -70,7 +70,7 @@ void Resources::load()
 	text[8].setFont(font[2]);
 	text[8].setPosition(1200.f, 90.f);
 	text[8].setStyle(sf::Text::Bold | sf::Text::Underlined);
-	message.setString("Message:  Click  on  the  board  give  input  data.");
+	message.setString("Message:  Click  on  the  board  to  give  input  data.");
 	message.setCharacterSize(20);
 	message.setFont(font[2]);
 	message.setPosition(110.f, 100.f);
