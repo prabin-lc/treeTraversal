@@ -140,7 +140,10 @@ unsigned inputTree::getLength()
 {
 	return length;
 }
-
+unsigned inputTree::getHeight()
+{
+	return height;
+}
 std::string* inputTree::getData(int n)
 {
 	return &data[n];

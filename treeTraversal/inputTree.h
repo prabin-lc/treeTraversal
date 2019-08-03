@@ -21,6 +21,7 @@ public:
 	tree* infix();
 	tree* infix(int h, unsigned int c);
 	unsigned getLength();
+	unsigned getHeight();
 	std::string* getData(int n);
 	void print2DUtil(tree*, int);
 	void print2D(tree*);

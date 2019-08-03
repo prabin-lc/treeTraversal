@@ -111,9 +111,7 @@ bool gameEvent(sf::RenderWindow* window)
 	isFocused = 0;
 	bool isOutput = false;
 	sf::Text dispT;
-	sf::Font dispF;
-	dispT.setFont(dispF);
-	dispF.loadFromFile("res/chalkboard.ttf");
+	dispT.setFont(Resources::font[2]);
 	while (window->isOpen())
 	{
 		sf::Event event;
@@ -247,8 +245,7 @@ bool gameEvent(sf::RenderWindow* window)
 				window->draw(Resources::sprite[Resources::toDrawSprite[j]]);
 			window->draw(Resources::text[7]);
 			window->draw(Resources::text[8]);
-			treeDisplay(window, Resources::outputT);
-
+			treeDisplay(window, Resources::outputT,0,0,Resources::a.getHeight());
 		}
 		else
 		{
@@ -267,14 +264,21 @@ bool gameEvent(sf::RenderWindow* window)
 			Resources::count.setString(std::to_string(Resources::a.getLength()));
 			Resources::count.setFillColor(sf::Color(150, 0, 0));
 			if (Resources::a.validate())Resources::count.setFillColor(sf::Color(0, 150,0));
-			
 			window->draw(Resources::count);
 		}
 		window->display();
 	}
 	return true;
 }
-void treeDisplay(sf::RenderWindow* window, tree* t)
+void treeDisplay(sf::RenderWindow* window, tree* t,int x,int y,int h)
 {
-	
+	if (h == 0)return;
+	y++;
+	treeDisplay(window, t->right, x + pow(2, h - 2), y, h - 1);
+	sf::Text data;
+	data.setString(t->data);
+	data.setFont(Resources::font[2]);
+	data.setPosition(670.f + x * 40, 170.f + 110 * (y-1));
+	window->draw(data);
+	treeDisplay(window, t->left, x - pow(2, h - 2), y, h - 1);
 }

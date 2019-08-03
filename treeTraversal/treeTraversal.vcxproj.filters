@@ -18,9 +18,6 @@
     <ClCompile Include="inputTree.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="sfmlex.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="tree.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -36,9 +33,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="inputTree.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="sfmlex.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="tree.h">
