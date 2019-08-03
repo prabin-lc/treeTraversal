@@ -1,11 +1,15 @@
 #pragma once
 #include<SFML/Graphics.hpp>
 #include "inputTree.h"
+#include "tree.h"
 
 class Resources 
 {
 public:
 	static inputTree a;
+	static tree* outputT;
+	static sf::Text message;
+	static sf::Text count;
 
 	static sf::Font *font;
 	static sf::Texture *texture;
@@ -26,6 +30,7 @@ public:
 	static void unfocusedS(int);
 
 	static void load();
+
 
 	~Resources();
 };

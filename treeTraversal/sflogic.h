@@ -5,4 +5,5 @@
 void sflogic();
 void setModeStart(unsigned int);
 void menuEvent(sf::RenderWindow*);
-void gameEvent(sf::RenderWindow*);
+bool gameEvent(sf::RenderWindow*);
+void treeDisplay(sf::RenderWindow*, tree*);

@@ -1,6 +1,9 @@
 #include "resources.h"
 inputTree Resources::a;
-sf::Font* Resources::font=new sf::Font[2];
+tree* Resources::outputT;
+sf::Text Resources::message;
+sf::Text Resources::count;
+sf::Font* Resources::font=new sf::Font[3];
 sf::Texture* Resources::texture = new sf::Texture [2];
 sf::Sprite* Resources::sprite = new sf::Sprite[2];
 sf::Text* Resources::text = new sf::Text[10];
@@ -12,6 +15,7 @@ void Resources::load()
 {
 	font[0].loadFromFile("res/Keshya.ttf");
 	font[1].loadFromFile("res/montserrat.ttf");
+	font[2].loadFromFile("res/chalkboard.ttf");
 	texture[0].loadFromFile("res/menu.png");
 	texture[1].loadFromFile("res/board.png");
 	sprite[0].setTexture(texture[0]);
@@ -38,10 +42,44 @@ void Resources::load()
 	text[3].setFont(font[1]);
 	text[3].setFillColor(sf::Color::Black);
 	text[3].setPosition(100.f, 390.f);
-	shape[0].setSize(sf::Vector2f(500.f,600.f));
-	shape[0].setPosition(100.f, 90.f);
+	shape[0].setSize(sf::Vector2f(1160.f,500.f));
+	shape[0].setPosition(110.f, 125.f);
 	shape[0].setFillColor(sf::Color::Transparent);
-
+	text[4].setString("1. PREFIX");
+	text[4].setCharacterSize(30);
+	text[4].setFont(font[2]);
+	text[4].setPosition(100.f, 650.f);
+	text[4].setStyle(sf::Text::Bold | sf::Text::Underlined);
+	text[5].setString("2. INFIX");
+	text[5].setCharacterSize(30);
+	text[5].setFont(font[2]);
+	text[5].setPosition(500.f, 650.f);
+	text[5].setStyle(sf::Text::Bold | sf::Text::Underlined);
+	text[6].setString("3. POSTFIX");
+	text[6].setCharacterSize(30);
+	text[6].setFont(font[2]);
+	text[6].setPosition(900.f, 650.f);
+	text[6].setStyle(sf::Text::Bold | sf::Text::Underlined);
+	text[7].setString("TREE:");
+	text[7].setCharacterSize(40);
+	text[7].setFont(font[2]);
+	text[7].setPosition(610.f, 110.f);
+	text[7].setStyle(sf::Text::Bold | sf::Text::Underlined);
+	text[8].setString("Reset");
+	text[8].setCharacterSize(30);
+	text[8].setFont(font[2]);
+	text[8].setPosition(1200.f, 90.f);
+	text[8].setStyle(sf::Text::Bold | sf::Text::Underlined);
+	message.setString("Message:  Click  on  the  board  give  input  data.");
+	message.setCharacterSize(20);
+	message.setFont(font[2]);
+	message.setPosition(110.f, 100.f);
+	message.setStyle(sf::Text::Bold|sf::Text::Underlined);
+	count.setFont(font[2]);
+	count.setCharacterSize(40);
+	count.setPosition(1240.f,650.f);
+	count.setOutlineThickness(1);
+	count.setOutlineColor(sf::Color::White);
 }
 void Resources::focusedT(int n)
 {
@@ -57,6 +95,7 @@ void Resources::focusedS(int n)
 {
 	shape[n].setOutlineThickness(1.f);
 	shape[n].setFillColor(sf::Color(90, 90, 110, 32));
+
 }
 void Resources::unfocusedS(int n)
 {

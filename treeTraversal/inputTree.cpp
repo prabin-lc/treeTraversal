@@ -36,38 +36,47 @@ inputTree::inputTree(int)
 		std::cout << "\ninvalid input.\nDid you forget to specify NULL nodes?\n" << std::endl;
 	}
 }
+void inputTree::reset()
+{
+	for (int i = 0; i < length; i++)
+	{
+		data[i] = "";
+	}
+	length = 0; height = 0;
+}
 void inputTree::addS()
 {
-	if (data[length] == "")return;
+	if (data[length-1] == "")return;
 	else
 	{
-		data[++length] = "";
+		length++;
 		height = static_cast<unsigned>(log2(length + 1));
 	}
 }
 
 void inputTree::addC(char c)
 {
-	data[length] += c;
+	if (length == 0 && data[length] == "")
+	{
+		length++;
+		height++;
+	}
+	data[length - 1] += c;
 }
 
 void inputTree::deleteC()
 {
-	if (length == 0)return;
-	else if (data[length] == "")
-	{
-		data[length--] = nullptr;
-		height = static_cast<unsigned>(log2(length + 1));
-	}
+	if (length == 0 && data[length] == "")return;
+	if (data[length-1]=="")
+		height = static_cast<unsigned>(log2(--length + 1));
 	else
-	{
-		data[length][data[length].length()] == NULL;
-	}
+		data[length-1].erase(data[length-1].length()-1);
 }
 
 bool inputTree::validate()
 {
-	if (fabs(length-pow(2,height)-1<0.0001)) return true;
+	if (length == 0)return false;
+	if (fabs(length-pow(2,height)+1)<0.0001) return true;
 	return false;
 }
 tree* inputTree::prefix()
@@ -125,6 +134,16 @@ tree* inputTree::infix(int h,unsigned int c)
 	newtree->left = infix(h - 1, c - static_cast<int>(pow(2, h - 2)));
 	newtree->right = infix(h - 1, c + static_cast<int>(pow(2, h - 2)));
 	return newtree;
+}
+
+unsigned inputTree::getLength()
+{
+	return length;
+}
+
+std::string* inputTree::getData(int n)
+{
+	return &data[n];
 }
 
 void inputTree::print2DUtil(tree* root, int space)

@@ -9,6 +9,7 @@ class inputTree
 public:
 	inputTree();
 	inputTree(int);
+	void reset();
 	void addS();
 	void addC(char);
 	void deleteC();
@@ -19,7 +20,10 @@ public:
 	tree* postfix(int, int);
 	tree* infix();
 	tree* infix(int h, unsigned int c);
+	unsigned getLength();
+	std::string* getData(int n);
 	void print2DUtil(tree*, int);
 	void print2D(tree*);
+	friend class Resources;
 };
 
